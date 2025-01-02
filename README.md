@@ -1,3 +1,5 @@
+![Output from each model](assets/readme/all-3-models(1).png)
+
 # DepthPro: Sharp Monocular Depth Estimation
 
 **DepthPro** is a foundational model designed for zero-shot monocular depth estimation. Leveraging a multi-scale vision transformer (ViT-based, Dinov2), the model optimizes for dense predictions by processing images at multiple scales. Each image is split into patches, encoded using a shared patch encoder across scales, then merged, upsampled, and fused via a DPT decoder.
@@ -118,7 +120,7 @@ We then modify [Apple's DepthPro for Monocular Depth Estimation](https://arxiv.o
    - Model achieves best `PSRN score of 24.80` and `SSIM score of 0.74` on validation set.
    - `PSRN score of 21.36` and `SSIM score of 0.62` on test set.
    - Model has been able to restore some of the information from low resolution images.
-   - Results are better than most of the most generative techniques applied on kaggle, but still has a long way to go to achieve the state of art results.
+   - Results are better than most of the generative techniques applied on kaggle, but still has a long way to go to achieve the state of art results.
    - This is because of the nature of Vision Transformers, which are not specifically designed for Super Resolution tasks.
 
 <details>
@@ -164,9 +166,9 @@ We then modify [Apple's DepthPro for Monocular Depth Estimation](https://arxiv.o
 </table>
 
 We use the modified [Apple's DepthPro for Monocular Depth Estimation](https://arxiv.org/abs/2410.02073) model for `Image Super Resolution Task`.
-1. The base model architechture is modified for the task of Image Super Resolution from 256px to 1024px (4x upsampling).
+1. The base model architechture is modified for the task of Image Super Resolution from 384px to 1536px (4x upsampling).
 2. For `training` and `validation`, we use `Div2k` dataset, introduced in [NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study](https://ieeexplore.ieee.org/document/8014884)
-   - It contains high resolution images in 2k resolution, which have been downsampled to `LR_SIZE=256` and `HR_SIZE=1024` for training and validation.
+   - It contains high resolution images in 2k resolution, which have been downsampled to `LR_SIZE=384` and `HR_SIZE=1536` for training and validation.
    - It contains
       - 800 training samples
       - 200 validation samples
